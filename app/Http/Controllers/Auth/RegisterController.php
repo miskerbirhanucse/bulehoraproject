@@ -69,9 +69,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
-        $admin=Role::where("name","admin")->first()->user_id;
-        $user=User::find($admin);
-        Mail::to($user->email)->send(new ApproveMail());
+        // $admin=Role::where("name","admin")->first()->user_id;
+        // $user=User::find($admin);
+        // Mail::to($user->email)->send(new ApproveMail());
         $createuser=User::create([
             'name' => $data['name'],
             'email' => $data['email'],

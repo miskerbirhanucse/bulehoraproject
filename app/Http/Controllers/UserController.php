@@ -14,8 +14,9 @@ class UserController extends Controller
         return view('admin.manage', compact('users'));
     }
     public function profile($id)
-    {
-        dd($id);
+    {   
+        return dd($id);
+    
     }
     public function deleteAdmin($id)
     {

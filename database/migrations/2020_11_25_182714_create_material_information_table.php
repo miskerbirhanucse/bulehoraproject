@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddInformationTable extends Migration
+class CreateMaterialInformationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAddInformationTable extends Migration
      */
     public function up()
     {
-        Schema::create('add_information', function (Blueprint $table) {
+        Schema::create('material_information', function (Blueprint $table) {
             $table->id();
-            $table->String('item_no');
-            $table->String('brief_description_of_good_or_related_service');
-            $table->String('BID');
-            $table->integer('user_id');
+            $table->string('item_no');
+            $table->string('brief_description_of_good_or_related_service');
+            $table->bigInteger('user_id');
+            $table->string('BID');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateAddInformationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add__information');
+        Schema::dropIfExists('material_information');
     }
 }

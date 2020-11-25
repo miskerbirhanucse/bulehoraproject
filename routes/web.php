@@ -31,4 +31,4 @@ Route::post('/request','RequestController@create');
 Route::post('/add_material','MaterialController@store');
 Route::get('/view_material','MaterialController@index');
 
-Route::get('user_profile/$id','UserController@profile')->name('user.profile');
+Route::get('/user_profile/{$id}','UserController@profile')->name('user.profile');

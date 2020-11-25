@@ -42,6 +42,6 @@ class User extends Authenticatable
     }
     
     public function addMaterial(){
-        return $this->hasMany(Add_Information::class);
+        return $this->hasMany(MaterialInformation::class);
     }
 }
