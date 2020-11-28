@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('dashboard-content')
-
 @if(Session::get('deleted'))
 <div class="alert alert-danger alert-dismissible fade show" role="alert" id="gone">
     <strong>{{Session::get('deleted')}}</strong>
@@ -22,7 +21,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <h6 class="m-0 font-weight-bold text-primary">User DataTable</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -48,7 +47,7 @@
                    
                     <th>
                         <a href="{{URL::to('/admin/aprove/')}}/{{$user->id}}" class="btn btn-success btn-sm">{{$user->approved==true?'Reject':'Approve'}} </a>|
-                        <a href="{{URL::to('edit-admin')}}/{{$user->id}}" class="btn btn-primary btn-sm"> Edit</a>|
+                        
                         <a href="{{URL::to('delete-admin')}}/{{$user->id}}" class="btn btn-danger btn-sm"> Delete</a>
                     </th>
                 </tbody>

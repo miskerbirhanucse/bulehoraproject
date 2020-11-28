@@ -38,10 +38,13 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        return $this->hasOne(Role::class,'user_id');
+        return $this->hasOne(Role::class);
     }
     
     public function addMaterial(){
         return $this->hasMany(MaterialInformation::class);
+    }
+    public function request(){
+        return $this->hasMany(Requests::class);
     }
 }

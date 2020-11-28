@@ -1,6 +1,5 @@
 
 <?php $__env->startSection('dashboard-content'); ?>
-
 <?php if(Session::get('deleted')): ?>
 <div class="alert alert-danger alert-dismissible fade show" role="alert" id="gone">
     <strong><?php echo e(Session::get('deleted')); ?></strong>
@@ -22,7 +21,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <h6 class="m-0 font-weight-bold text-primary">User DataTable</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -48,7 +47,7 @@
                    
                     <th>
                         <a href="<?php echo e(URL::to('/admin/aprove/')); ?>/<?php echo e($user->id); ?>" class="btn btn-success btn-sm"><?php echo e($user->approved==true?'Reject':'Approve'); ?> </a>|
-                        <a href="<?php echo e(URL::to('edit-admin')); ?>/<?php echo e($user->id); ?>" class="btn btn-primary btn-sm"> Edit</a>|
+                        
                         <a href="<?php echo e(URL::to('delete-admin')); ?>/<?php echo e($user->id); ?>" class="btn btn-danger btn-sm"> Delete</a>
                     </th>
                 </tbody>
@@ -58,4 +57,4 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\admin\Desktop\New folder\project\resources\views/admin/manage.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\admin\Desktop\New folder\project\resources\views/admin/manageUser.blade.php ENDPATH**/ ?>

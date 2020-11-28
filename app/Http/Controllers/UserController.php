@@ -5,18 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
     public function index()
     {
         $users = User::all();
-        return view('admin.manage', compact('users'));
+        return view('admin.manageUser', compact('users'));
     }
     public function profile($id)
     {   
-        return dd($id);
-    
+        $user=User::find($id);
+        return view('profile.viewProfile',compact('user'));
     }
     public function deleteAdmin($id)
     {
@@ -48,5 +50,18 @@ class UserController extends Controller
             $role->save();
         }
         return redirect()->back()->with('Success', $mess);
+    }
+    public function store(Request $request,$id){
+        if($request->password && $request->phone && $request->mail && $request->name){
+            $user=User::find($id);
+            $user->password=Hash::make($request->password);
+            $user->phone_number=$request->phone;
+            $user->email=$request->email;
+            $user->name=$request->name;
+            $user->save();
+            return $user;
+        }
+        
+        
     }
 }
